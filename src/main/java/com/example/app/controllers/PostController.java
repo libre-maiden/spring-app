@@ -32,8 +32,8 @@ public class PostController {
     }
 
     @PostMapping("/blog/add")
-    public String postAddHandler(@RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model) {
-        Post post = new Post(title, anons, full_text);
+    public String postAddHandler(@RequestParam String title, @RequestParam String anons, @RequestParam String fullText, Model model) {
+        Post post = new Post(title, anons, fullText);
         postRepository.save(post);
         return "redirect:/blog";
     }
@@ -65,11 +65,11 @@ public class PostController {
     }
 
     @PostMapping("/blog/{id}/edit")
-    public String postUpdate(@PathVariable(value = "id") long id, @RequestParam String title, @RequestParam String anons, @RequestParam String full_text, Model model) {
+    public String postUpdate(@PathVariable(value = "id") long id, @RequestParam String title, @RequestParam String anons, @RequestParam String fullText, Model model) {
         Post post = postRepository.findById(id).orElseThrow();
         post.setTitle(title);
         post.setAnons(anons);
-        post.setFull_text(full_text);
+        post.setFullText(fullText);
         postRepository.save(post);
 
         return "redirect:/blog";

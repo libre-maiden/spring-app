@@ -13,7 +13,7 @@
     <form method="post">
       <input type="text" th:value="${el.title}" name="title" placeholder="Название статьи" class="form-control"><br>
       <input type="text" th:value="${el.anons}" name="anons" placeholder="Название анонса" class="form-control"><br>
-      <textarea name="full_text" placeholder="Текст" class="form-control" th:text="${el.full_text}" /><br>
+      <textarea name="fullText" placeholder="Текст" class="form-control" th:text="${el.fullText}" /><br>
       <button type="submit" class="btn btn-success">Обновить</button>
     </form>
   </div>
